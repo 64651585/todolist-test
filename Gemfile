@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'rake', '~> 13.0.6'
 
+gem 'bootstrap', '~> 5.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record

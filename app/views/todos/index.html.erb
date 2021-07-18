@@ -2,14 +2,20 @@
 
 <%= link_to "New Todo Item", new_todo_path %>
 
-<h2>Tarefas a fazer</h2>
+<h2>Tarefas não feitas</h2>
 
-<% @todos.each do |todo| %>
-    <li>
-      <%= link_to todo.title, todo_path(todo.id) %>
-      <%= link_to "edit", edit_todo_path(todo[:id]) %>
-      <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" }%>
-    </li>
-<% end %>
+
+<div>
+  <% @todos.each do |todo| %>
+      <li>
+        <%= link_to todo.title, todo_path(todo.id) %>
+        <%= check_box_tag 'done' %><a>done</a>
+        
+        <%= link_to "edit", edit_todo_path(todo[:id]) %>
+        <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" }%>
+      </li>
+  <% end %>
+</div>
 
 <h2>Tarefas feitas</h2>
+

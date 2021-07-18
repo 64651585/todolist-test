@@ -31,8 +31,18 @@ class TodosController < ApplicationController
         redirect_to root_path
     end
 
+    
+
+    def complete
+        @todo.update_attribute(:completed_at, Time.now)
+        redirect_to todo_path(@todo), notice: "Todo item completed"
+    end
+
     private
     def todo_params
-      params.require(:todo).permit(:title, :description)
+      params.require(:todo).permit(:title, :description, :complete)
+    end
+
+    def done
     end
 end
