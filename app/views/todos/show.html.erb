@@ -7,11 +7,28 @@
 
   <body class="body" >
 
-    <h1 class="mt-5 ml-5 title" >Todo Show Page</h1>
-        <p>Title: <%= @todo['title']%></p>
-        <p>Description: <%= @todo['description']%></p>
+    <div class="content">
+      <div class="row d-flex justify-content-center mb-5">
+        <div class="col-md-6">
+          <h1 class="mt-5 ml-5 title" >Todo Show Page</h1>
+            <p class="title" >Title:</br> 
+              <div class="card">
+                <%= @todo['title']%>
+              </div>
+            </p>
+            <p class="title" >Description:</br> 
+              <div class="card">
+                <%= @todo['description']%>
+              </div>
+            </p>
 
-        <%= link_to "Back To Todo List",todos_path%>
+            <div class="actions text-right btn-lg me-3">
+              <%= link_to "Back To Todo List",todos_path, class: 'btn btn-primary'%>
+            </div>
+
+        </div>
+      </div>
+    </div>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

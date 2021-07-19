@@ -19,7 +19,7 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">Tarefas para concluir</h4>
+            <h4 class="card-title">Tasks to complete</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -35,18 +35,18 @@
                     Options
                   </th>
                 </thead>
-
                 <% @todos.each do |todo| %>
                   <tbody>
                     <tr>
                       <td class="" >
-                        <%= check_box_tag :complete, true, false %>
+                        <button type="button" class="btn btn-light">&#9744;</button>
+                        <button type="button" class="btn btn-light">&check;</button>
                       </td>
                       <td class="words" >
                         <%= link_to todo.title, todo_path(todo.id) %>
                       </td>
                       <td class="text-right">
-                        <%= link_to "edit", edit_todo_path(todo[:id]) %>
+                        <%= link_to "edit", edit_todo_path(todo[:id])%>
                         <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" }%>
                       </td>
                     </tr>

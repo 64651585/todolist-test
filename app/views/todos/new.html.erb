@@ -7,16 +7,30 @@
 
   <body class="body" >
 
-    <h1 class="mt-5 ml-5 title" >Create a New Todo</h1>
-      <%= form_for @todo do |f| %>
+    <div class="content">
+      <div class="row d-flex justify-content-center mb-5">
+        <div class="col-md-6">
+          <h1 class="mt-5 ml-5 title" >Create a New Todo</h1>
+            <%= form_for @todo do |f| %>
 
-        <%= label_tag(:title, "Title:") %>
-        <%= f.text_field :title %></br>
+              <div class="field m-3">
+                <%= label_tag(:title, "Title:") %>
+                <%= f.text_field :title, placeholder: 'Task title', class: 'form-control' %></br>
+              </div>
 
-        <%= label_tag(:description, "Description") %> 
-        <%= f.text_area :description %></br>
-        <%= f.submit "Create" %>
-      <% end %>
+              <div class="field m-3">
+                <%= label_tag(:description, "Description") %> 
+                <%= f.text_area :description, placeholder: 'Task description', class: 'form-control' %></br>
+              </div>
+
+              <div class="actions text-right btn-lg me-3">
+                <%= link_to 'Cancelar', todos_path, class: 'btn btn-warning' %>
+                <%= f.submit "Create", class: 'btn btn-primary' %>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
