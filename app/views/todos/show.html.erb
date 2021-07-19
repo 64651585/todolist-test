@@ -1,5 +1,20 @@
-<h1>Todo Show Page</h1>
-<p>Title: <%= @todo['title']%></p>
-<p>Description: <%= @todo['description']%></p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"/>
+  </head>
 
-<%= link_to "Back To Todo List",todos_path%>
+  <body class="body" >
+
+    <h1 class="mt-5 ml-5 title" >Todo Show Page</h1>
+        <p>Title: <%= @todo['title']%></p>
+        <p>Description: <%= @todo['description']%></p>
+
+        <%= link_to "Back To Todo List",todos_path%>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </body>
+</html>

@@ -1,21 +1,64 @@
-<h1> Minha ToDo List </h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"/>
+  </head>
 
-<%= link_to "New Todo Item", new_todo_path %>
+  <body class="body" >
+    <h1 class="mt-5 ml-5 title" > My ToDo List </h1>
 
-<h2>Tarefas não feitas</h2>
+    <div class="d-flex justify-content-end m-5" >
+      <button type="button" class="btn btn-primary-link btn-lg">
+        <%= link_to "New Item", new_todo_path %>
+      </button>
+    </div>
 
+    <div class="content">
+      <div class="row d-flex justify-content-center mb-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Tarefas para concluir</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    Done
+                  </th>
+                  <th>
+                    Todo
+                  </th>
+                  <th class="text-right">
+                    Options
+                  </th>
+                </thead>
 
-<div>
-  <% @todos.each do |todo| %>
-      <li>
-        <%= link_to todo.title, todo_path(todo.id) %>
-        <%= check_box_tag 'done' %><a>done</a>
-        
-        <%= link_to "edit", edit_todo_path(todo[:id]) %>
-        <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" }%>
-      </li>
-  <% end %>
-</div>
-
-<h2>Tarefas feitas</h2>
-
+                <% @todos.each do |todo| %>
+                  <tbody>
+                    <tr>
+                      <td class="" >
+                        <%= check_box_tag :complete, true, false %>
+                      </td>
+                      <td class="words" >
+                        <%= link_to todo.title, todo_path(todo.id) %>
+                      </td>
+                      <td class="text-right">
+                        <%= link_to "edit", edit_todo_path(todo[:id]) %>
+                        <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" }%>
+                      </td>
+                    </tr>
+                  </tbody>
+                <% end %>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </body>
+</html>
