@@ -40,8 +40,14 @@ class TodosController < ApplicationController
         redirect_to todo_path(@todo), notice: 'Mensagem enviada com sucesso!'
     end
 
+    def clickedon
+    end
+
+    def clickedoff
+    end
+
     private
     def todo_params
-      params.require(:todo).permit(:title, :description, :complete)
+      params.require(:todo).permit(:title, :description)
     end
 end

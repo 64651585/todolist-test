@@ -10,7 +10,7 @@
 
     <div class="d-flex justify-content-end m-5" >
       <button type="button" class="btn btn-primary-link btn-lg">
-        <%= link_to "New Item", new_todo_path %>
+        <%= link_to "New Item", new_todo_path, class: 'list' %>
       </button>
     </div>
 
@@ -19,35 +19,35 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">Tasks to complete</h4>
+            <h4 class="card-title list">Tasks to complete</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
                   <th>
-                    Done
+                    <p class="list">Done</p>
                   </th>
                   <th>
-                    Todo
+                  <p class="list">Todo</p>
                   </th>
                   <th class="text-right">
-                    Options
+                  <p class="list">Options</p>
                   </th>
                 </thead>
                 <% @todos.each do |todo| %>
                   <tbody>
                     <tr>
-                      <td class="" >
+                      <td>
                         <button type="button" class="btn btn-light">&#9744;</button>
                         <button type="button" class="btn btn-light">&check;</button>
                       </td>
-                      <td class="words" >
-                        <%= link_to todo.title, todo_path(todo.id) %>
+                      <td>
+                        <%= link_to todo.title, todo_path(todo.id), class: 'words' %>
                       </td>
                       <td class="text-right">
-                        <%= link_to "edit", edit_todo_path(todo[:id])%>
-                        <%= link_to "delete", todo, method: :delete, data: { confirm: "You sure?" }%>
+                        <%= link_to "edit", edit_todo_path(todo[:id]), class: 'words' %>
+                        <%= link_to "delete", todo, class: 'words', method: :delete, data: { confirm: "Are You sure?" }%>
                       </td>
                     </tr>
                   </tbody>
