@@ -35,23 +35,23 @@
                   <p class="list">Options</p>
                   </th>
                 </thead>
-                <% @todos.each do |todo| %>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <button type="button" class="btn btn-light">&#9744;</button>
-                        <button type="button" class="btn btn-light">&check;</button>
-                      </td>
-                      <td>
-                        <%= link_to todo.title, todo_path(todo.id), class: 'words' %>
-                      </td>
-                      <td class="text-right">
-                        <%= link_to "edit", edit_todo_path(todo[:id]), class: 'words' %>
-                        <%= link_to "delete", todo, class: 'words', method: :delete, data: { confirm: "Are You sure?" }%>
-                      </td>
-                    </tr>
-                  </tbody>
-                <% end %>
+                  <% @todos.each do |todo| %>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <button type="button" class="btn btn-light">&#9744;</button>
+                          <button type="button" class="btn btn-light">&check;</button>
+                        </td>
+                        <td>
+                          <%= link_to todo.title, todo_path(todo.id), class: 'words' %>
+                        </td>
+                        <td class="text-right">
+                          <%= link_to "edit", edit_todo_path(todo[:id]), class: 'words' %>
+                          <%= link_to "delete", todo, class: 'words', method: :delete, data: { confirm: "Are You sure?" }%>
+                        </td>
+                      </tr>
+                    </tbody>
+                  <% end %>
               </table>
             </div>
           </div>

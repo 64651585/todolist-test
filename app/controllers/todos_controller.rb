@@ -37,13 +37,7 @@ class TodosController < ApplicationController
 
     def complete
         @todo.update_attribute(:completed_at, Time.now)
-        redirect_to todo_path(@todo), notice: 'Mensagem enviada com sucesso!'
-    end
-
-    def clickedon
-    end
-
-    def clickedoff
+        redirect_to todo_path(@todo), notice: 'Complete task'
     end
 
     private
